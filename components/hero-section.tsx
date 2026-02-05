@@ -1,8 +1,10 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
+import { EVENTBRITE_URL } from "@/lib/constants"
 
 export function HeroSection() {
   return (
@@ -27,12 +29,15 @@ export function HeroSection() {
               <a href="#prizes" className="hover:text-foreground transition-colors">Prizes</a>
               <a href="#info" className="hover:text-foreground transition-colors">Info</a>
               <a href="#agenda" className="hover:text-foreground transition-colors">Schedule</a>
+              <a href="#judging" className="hover:text-foreground transition-colors">Judging</a>
               <a href="#faq" className="hover:text-foreground transition-colors">FAQ</a>
             </div>
           </div>
-          <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
-            Register Now
-            <ArrowRight className="ml-2 h-4 w-4" />
+          <Button asChild size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
+            <Link href={EVENTBRITE_URL} target="_blank" rel="noopener noreferrer">
+              Register Now
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
           </Button>
         </div>
       </nav>
@@ -42,25 +47,25 @@ export function HeroSection() {
         <div className="max-w-4xl text-center">
           <p className="text-sm font-mono mb-6 tracking-widest uppercase">
             <span className="px-2 py-1 rounded-sm bg-date-highlight">
-              March 14, 2026 &bull; QC Office &bull; Free Entry
+              March 14th, 2026 &bull; Québec City &bull; Free Entry
             </span>
           </p>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.1] text-balance mb-8 bg-hero-container">
-            Build agents with <span className="text-white">Botpress ADK</span>
-            <br />
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] text-balance mb-8 bg-hero-container">
+            Build, ship, and demo a Discord agent in one day with <span className="text-white">Botpress.</span>
           </h1>
-          <p className="text-md md:text-lg max-w-2xl mx-auto mb-12 leading-relaxed bg-hero-container">
-            Join 100 developers for a 12-hour hackathon. Learn the ADK, build Discord agents
-            with Botpress, and compete for prizes. Teams of up to 4.
+          <p className="body-copy max-w-2xl mx-auto mb-12 bg-hero-container">
+            Join us for a one-day, in-person hackathon in Québec City. Design and build creative agents with Botpress — all in a single day.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center" >
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-base px-8">
-              Register on Eventbrite
-              <ArrowRight className="ml-2 h-5 w-5" />
+            <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-base px-8">
+              <Link href={EVENTBRITE_URL} target="_blank" rel="noopener noreferrer">
+                Register on Eventbrite
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </Button>
 
-            <Button size="lg" variant="outline" className="text-base px-8 bg-hero-container border border-black hover:bg-hero-container-dark hover:text-black">
-              View Schedule
+            <Button asChild size="lg" variant="outline" className="text-base px-8 bg-hero-container border border-black hover:bg-hero-container-dark hover:text-black">
+              <Link href="#agenda">View Schedule</Link>
             </Button>
           </div>
         </div>
@@ -68,20 +73,20 @@ export function HeroSection() {
         {/* Event Details */}
         <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 p-2 text-center bg-hero-container">
           <div>
-            <p className="text-sm  mb-1 font-mono uppercase tracking-wide">Location</p>
-            <p className="text-foreground font-medium text-white">QC Office</p>
+            <p className="text-sm mb-1 font-mono uppercase tracking-wide">Location</p>
+            <p className="text-foreground font-medium text-white">Québec City</p>
           </div>
           <div>
-            <p className="text-sm  mb-1 font-mono uppercase tracking-wide">Date</p>
-            <p className="text-foreground font-medium text-white">March 14, 2026</p>
+            <p className="text-sm mb-1 font-mono uppercase tracking-wide">Date</p>
+            <p className="text-foreground font-medium text-white">March 14th, 2026</p>
           </div>
           <div>
-            <p className="text-sm  mb-1 font-mono uppercase tracking-wide">Duration</p>
-            <p className="text-foreground font-medium text-white">9 AM - 9 PM</p>
+            <p className="text-sm mb-1 font-mono uppercase tracking-wide">Duration</p>
+            <p className="text-foreground font-medium text-white">9 AM – 9 PM</p>
           </div>
           <div>
-            <p className="text-sm  mb-1 font-mono uppercase tracking-wide">Capacity</p>
-            <p className="font-medium text-white">100 Participants</p>
+            <p className="text-sm mb-1 font-mono uppercase tracking-wide">Free</p>
+            <p className="font-medium text-white">Register on Eventbrite</p>
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@ import { HeroSection } from "@/components/hero-section"
 import { PrizeSection } from "@/components/prize-section"
 import { InfoSection } from "@/components/info-section"
 import { AgendaSection } from "@/components/agenda-section"
+import { JudgingSection } from "@/components/judging-section"
 import { FaqSection } from "@/components/faq-section"
 import { Footer } from "@/components/footer"
 
@@ -12,6 +13,7 @@ export default function EventPage() {
       <PrizeSection />
       <InfoSection />
       <AgendaSection />
+      <JudgingSection />
       <FaqSection />
       <Footer />
     </main>

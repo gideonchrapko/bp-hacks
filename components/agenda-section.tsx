@@ -4,37 +4,39 @@ export function AgendaSection() {
   const schedule = [
     {
       time: "9:00 AM",
-      title: "Introduction & Welcome",
-      description:
-        "Opening ceremony, team formation, challenge briefing, and judging criteria overview.",
+      title: "Welcome & introduction",
+      description: "Coffee and light breakfast snacks provided.",
       duration: "1 hour",
     },
     {
       time: "10:00 AM",
-      title: "Hacking Begins",
-      description:
-        "Start building your Discord agent using the Botpress ADK. Technical staff will be available for support.",
+      title: "Hacking begins",
+      description: "Start building your Discord agent with Botpress.",
+      duration: "—",
+    },
+    {
+      time: "12:00 PM – 1:00 PM",
+      title: "Lunch (provided)",
+      description: "Lunch provided for all participants.",
+      duration: "1 hour",
+    },
+    {
+      time: "1:00 PM – 6:00 PM",
+      title: "Hacking",
+      description: "Continue building and iterating on your agent.",
+      duration: "5 hours",
+    },
+    {
+      time: "6:00 PM – 7:00 PM",
+      title: "Dinner (provided)",
+      description: "Dinner provided. Refuel for demos!",
+      duration: "1 hour",
+    },
+    {
+      time: "7:00 PM – 9:00 PM",
+      title: "Demos, judging, prizes & wrap-up",
+      description: "Present your project, judging, and prize ceremony.",
       duration: "2 hours",
-    },
-    {
-      time: "12:00 PM",
-      title: "Lunch Break",
-      description:
-        "Cold lunches provided (wraps, sandwiches, etc.). Snacks and drinks available throughout the day.",
-      duration: "1 hour",
-    },
-    {
-      time: "6:00 PM",
-      title: "Dinner Break",
-      description: "Pizza dinner. Refuel for the final stretch!",
-      duration: "1 hour",
-    },
-    {
-      time: "9:00 PM",
-      title: "Presentations & Awards",
-      description:
-        "Submit your YouTube video, Discord agent link, and GitHub repo. Winners announced!",
-      duration: "End",
     },
   ]
 
@@ -74,7 +76,7 @@ export function AgendaSection() {
                       <span className="text-sm text-muted-foreground">{item.duration}</span>
                     </div>
                     <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                    <p className="text-muted-foreground">{item.description}</p>
+                    <p className="body-copy">{item.description}</p>
                   </div>
                 </div>
               </div>

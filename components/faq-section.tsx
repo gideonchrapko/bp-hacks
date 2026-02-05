@@ -10,29 +10,29 @@ import {
 export function FaqSection() {
   const faqs = [
     {
-      question: "Will food be provided?",
-      answer:
-        "Lunch (cold lunches like wraps and sandwiches) and dinner (pizza) will be provided. Breakfast is not included -- only light snacks will be available in the morning, so please eat before you arrive. Snacks and drinks (water, soda, energy drinks, coffee, protein bars) will be available throughout the day.",
-    },
-    {
       question: "Who can participate?",
       answer:
-        "The hackathon is open to developers, students, and anyone interested in building AI agents with Botpress. All skill levels are welcome -- this is a great opportunity to learn the ADK and build something real.",
+        "Anyone — all skill levels are welcome (including CEGEP students and new grads).",
     },
     {
-      question: "How many participants per team?",
+      question: "How many people per team?",
       answer:
-        "Teams can have up to 4 members. You can come with a pre-formed team or find teammates during the team formation session at the start of the event.",
+        "Teams of 3–4 people, but please enter individually.",
     },
     {
-      question: "How will the projects be judged?",
+      question: "Will food be provided?",
       answer:
-        "Judging criteria will be shared at the start of the event. Submissions will include a YouTube video demo, a live Discord agent link, and your GitHub repository. A panel of judges will evaluate each project.",
+        "Yes. Light snacks in the morning, lunch, dinner, and coffee throughout the day.",
     },
     {
-      question: "How much does it cost to register?",
+      question: "Do I need to prepare anything in advance?",
       answer:
-        "Registration is completely free. Just sign up on Eventbrite to secure your spot. Capacity is limited to 100 participants, so register early!",
+        "If possible, please create a Botpress workspace and install the Botpress ADK on your machine before the event to save time.",
+    },
+    {
+      question: "What if I can't make it to the Québec City hackathon?",
+      answer:
+        "No worries! If you can't attend the Québec City hackathon, we'll be hosting similar events in Montréal and online in the near future, and you'll be able to join us there instead.",
     },
   ]
 
@@ -56,7 +56,7 @@ export function FaqSection() {
                   <AccordionTrigger className="text-left text-lg font-medium hover:no-underline hover:text-accent py-6">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground text-base leading-relaxed pb-6">
+                  <AccordionContent className="body-copy pb-6">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>

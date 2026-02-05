@@ -18,6 +18,7 @@ const config: Config = {
         'hero-container-dark': '#8578e8',
         'date-highlight': '#AAE1A1',
         'merch-bg': '#EFEFEF',
+        'body-copy': 'hsl(var(--body-copy))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {

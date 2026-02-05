@@ -1,40 +1,16 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Laptop, Car, Cookie, MapPin, ArrowRight } from "lucide-react"
+import { Laptop, Car, UtensilsCrossed, MapPin, ArrowRight } from "lucide-react"
+import Link from "next/link"
+import { EVENTBRITE_URL } from "@/lib/constants"
 
 export function InfoSection() {
-  const infoItems = [
-    {
-      icon: Laptop,
-      title: "Bring Your Laptop & Charger",
-      description:
-        "Make sure to bring your own laptop and charger. We'll provide Wi-Fi and power outlets.",
-    },
-    {
-      icon: Car,
-      title: "Parking Available",
-      description:
-        "Parking is available at the QC office. Details will be shared closer to the event.",
-    },
-    {
-      icon: Cookie,
-      title: "No Breakfast Provided",
-      description:
-        "Breakfast is not included -- only light snacks in the morning. Please eat before arriving. Lunch and dinner will be provided.",
-    },
-    {
-      icon: MapPin,
-      title: "QC Office",
-      description: "The hackathon takes place at the Botpress QC office. Full address will be shared upon registration.",
-    },
-  ]
-
   return (
     <section id="info" className="py-24 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
-          {/* Left Column - Info */}
+          {/* Left Column - General Info */}
           <div>
             <p className="text-sm font-mono text-accent mb-4 tracking-widest uppercase">
               General Info
@@ -42,28 +18,86 @@ export function InfoSection() {
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-balance">
               What you need to know
             </h2>
-            <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
-              Everything you need to prepare for the event. Make sure to review
-              this information before the big day.
-            </p>
 
-            <div className="grid gap-6">
-              {infoItems.map((item) => (
-                <div
-                  key={item.title}
-                  className="flex gap-5 p-5 rounded-lg border border-border bg-card hover:border-muted-foreground/30 transition-colors"
-                >
-                  <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center shrink-0">
-                    <item.icon className="h-6 w-6 text-muted-foreground" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
+            {/* About the Hackathon */}
+            <div className="mb-10">
+              <h3 className="text-xl font-semibold mb-3">About the Hackathon</h3>
+              <p className="body-copy">
+                Join us for a one-day, in-person hackathon where participants will design and build creative, useful agents using <strong>Botpress</strong>. Whether you&apos;re a student or a recent graduate, this event is a chance to experiment, collaborate, and ship something real — all in a single day.
+              </p>
+            </div>
+
+            {/* Location */}
+            <div className="mb-10">
+              <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
+                <MapPin className="h-5 w-5" />
+                Location
+              </h3>
+              <p className="body-copy font-medium">875 Bd Charest O, Suite 200</p>
+              <p className="body-copy">Québec City, QC G1N 3N8, Canada</p>
+            </div>
+
+            {/* Parking */}
+            <div className="mb-10">
+              <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
+                <Car className="h-5 w-5" />
+                Parking
+              </h3>
+              <ul className="body-copy list-disc list-inside space-y-1">
+                <li>Free parking available at <strong>875 Boulevard Charest Ouest</strong></li>
+                <li>Street parking available nearby</li>
+              </ul>
+            </div>
+
+            {/* Food & Drinks */}
+            <div className="mb-10">
+              <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
+                <UtensilsCrossed className="h-5 w-5" />
+                Food & Drinks
+              </h3>
+              <ul className="body-copy list-disc list-inside space-y-1">
+                <li>Coffee available throughout the day</li>
+                <li>Light snacks in the morning (please eat before arriving)</li>
+                <li>Lunch and dinner provided</li>
+                <li>Participants with dietary restrictions may bring their own food</li>
+              </ul>
+            </div>
+
+            {/* What to Bring */}
+            <div>
+              <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
+                <Laptop className="h-5 w-5" />
+                What to Bring
+              </h3>
+              <div className="space-y-4">
+                <div>
+                  <p className="font-semibold mb-1">Required</p>
+                  <ul className="body-copy list-disc list-inside">
+                    <li>Laptop</li>
+                    <li>Laptop charger</li>
+                  </ul>
                 </div>
-              ))}
+                <div>
+                  <p className="font-semibold mb-1">Strongly Recommended</p>
+                  <ul className="body-copy list-disc list-inside space-y-1">
+                    <li>Headphones</li>
+                    <li>Any adapters or dongles you may need</li>
+                    <li>
+                      A <Link href="https://sso.botpress.cloud/" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:opacity-80">Botpress workspace</Link> created in advance
+                    </li>
+                    <li>
+                      <Link href="https://botpress.com/docs/adk/quickstart" target="_blank" rel="noopener noreferrer" className="underline text-accent hover:opacity-80">Botpress ADK</Link> installed locally
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold mb-1">Optional but Helpful</p>
+                  <ul className="body-copy list-disc list-inside">
+                    <li>Mouse / keyboard</li>
+                    <li>Reusable water bottle</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -74,19 +108,22 @@ export function InfoSection() {
                 Registration
               </p>
               <h3 className="text-3xl font-bold mb-4 tracking-tight">Ready to compete?</h3>
-              <p className="mb-8 leading-relaxed">
-                Spots are limited to 100 participants. Register now to secure your
-                place at the hackathon.
+              <p className="body-copy mb-8">
+                Registration is free and should be done individually via Eventbrite. Participants may form teams on-site.
               </p>
 
               <div className="space-y-4 mb-8">
                 <div className="flex justify-between py-3 border-b border-black">
                   <span className="text-muted-foreground">Event Date</span>
-                  <span className="font-medium">March 14, 2026</span>
+                  <span className="font-medium">March 14th, 2026</span>
                 </div>
                 <div className="flex justify-between py-3 border-b border-black">
                   <span className="text-muted-foreground">Time</span>
-                  <span className="font-medium">9:00 AM - 9:00 PM</span>
+                  <span className="font-medium">9:00 AM – 9:00 PM</span>
+                </div>
+                <div className="flex justify-between py-3 border-b border-black">
+                  <span className="text-muted-foreground">Team Size</span>
+                  <span className="font-medium">3–4 people (register individually)</span>
                 </div>
                 <div className="flex justify-between py-3 border-b border-black">
                   <span className="text-muted-foreground">Registration Fee</span>
@@ -94,12 +131,11 @@ export function InfoSection() {
                 </div>
               </div>
 
-              <Button
-                className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
-                size="lg"
-              >
-                Register on Eventbrite
-                <ArrowRight className="ml-2 h-5 w-5" />
+              <Button asChild className="w-full bg-primary text-primary-foreground hover:bg-primary/90" size="lg">
+                <Link href={EVENTBRITE_URL} target="_blank" rel="noopener noreferrer">
+                  Register on Eventbrite
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
               </Button>
             </div>
           </div>

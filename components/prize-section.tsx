@@ -3,10 +3,10 @@ import Image from "next/image"
 export function PrizeSection() {
   const prizes = [
     {
-      title: "$500 Cash Prize",
+      title: "$500 CAD",
       description: "Cash prize awarded to the winning team.",
       accent: false,
-      backgroundImage: "/images/cash-prize.png", // optional: set to undefined for no image
+      backgroundImage: "/images/cash-prize.png",
     },
     {
       title: "Botpress Credits",
@@ -15,8 +15,8 @@ export function PrizeSection() {
       backgroundImage: "/images/bp-credits.png",
     },
     {
-      title: "Trophy",
-      description: "A trophy for the winning team to commemorate the victory.",
+      title: "Swag",
+      description: "Exclusive hackathon swag for participants.",
       accent: false,
       backgroundImage: "/images/trophy.png",
     },
@@ -28,7 +28,7 @@ export function PrizeSection() {
         <div className="mb-16">
           <p className="text-sm font-mono text-accent mb-4 tracking-widest uppercase">Rewards</p>
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-balance">
-            Prizes & Swag
+            $500 CAD + Botpress Credits + Swag
           </h2>
         </div>
 
@@ -54,10 +54,10 @@ export function PrizeSection() {
                     />
                   </div>
                   <div className="p-6 bg-background">
-                    <p className={`text-xl mb-2 ${prize.accent ? "text-accent" : "text-foreground"}`}>
+                    <p className={`text-2xl mb-2 ${prize.accent ? "text-accent" : "text-foreground"}`}>
                       {prize.title}
                     </p>
-                    <p className="text-sm text-muted-foreground">{prize.description}</p>
+                    <p className="body-copy">{prize.description}</p>
                   </div>
                 </>
               ) : (
@@ -65,7 +65,7 @@ export function PrizeSection() {
                   <p className={`text-2xl font-bold mb-3 ${prize.accent ? "text-accent" : "text-foreground"}`}>
                     {prize.title}
                   </p>
-                  <p className="text-muted-foreground">{prize.description}</p>
+                  <p className="body-copy">{prize.description}</p>
                 </div>
               )}
             </div>
@@ -82,10 +82,10 @@ export function PrizeSection() {
               sizes="33vw"
             />
           </div>
-          <div className="flex-1 flex flex-col justify-center px-6 py-6">
-            <p className="text-xl font-medium text-foreground mb-2">Merch for everyone</p>
-            <p className="text-sm text-muted-foreground">
-              All participants will receive exclusive hackathon swag including beanies and more.
+          <div className="flex-1 flex flex-col justify-center p-10">
+            <p className="text-2xl text-foreground mb-2">Merch for everyone</p>
+            <p className="body-copy">
+              All participants will receive exclusive hackathon swag.
             </p>
           </div>
         </div>
