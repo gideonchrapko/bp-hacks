@@ -14,6 +14,10 @@ const config: Config = {
         heading: ['"Cal Sans"', 'sans-serif'],
       },
       colors: {
+        'hero-container': '#9F92FF',
+        'hero-container-dark': '#8578e8',
+        'date-highlight': '#AAE1A1',
+        'merch-bg': '#EFEFEF',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
@@ -64,6 +68,12 @@ const config: Config = {
           border: 'hsl(var(--sidebar-border))',
           ring: 'hsl(var(--sidebar-ring))',
         },
+      },
+      backgroundImage: {
+        'hero-pattern': "url('/images/bg-text.svg')",
+      },
+      backgroundSize: {
+        'auto': 'auto',
       },
       borderRadius: {
         lg: 'var(--radius)',

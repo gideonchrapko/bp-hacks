@@ -9,15 +9,7 @@ export function HeroSection() {
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-background">
       {/* Purple image container - same max-width as content (max-w-7xl) */}
       <div className="absolute z-0 top-[80px] left-0 right-0 bottom-[30px] px-[30px]">
-        <div
-          className="max-w-7xl mx-auto h-full rounded-[15px] overflow-hidden shadow-none"
-          style={{
-            backgroundColor: "#9F92FF",
-            backgroundImage: "url('/images/bg-text.svg')",
-            backgroundRepeat: "repeat",
-            backgroundSize: "auto",
-          }}
-        />
+        <div className="max-w-7xl mx-auto h-full rounded-[15px] overflow-hidden shadow-none bg-hero-container bg-hero-pattern bg-repeat bg-auto" />
       </div>
 
       {/* Navigation */}
@@ -49,18 +41,15 @@ export function HeroSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-10 md:px-12 pt-32 pb-20">
         <div className="max-w-4xl text-center">
           <p className="text-sm font-mono mb-6 tracking-widest uppercase">
-            <span
-              className="px-2 py-1 rounded-sm"
-              style={{ backgroundColor: "#AAE1A1" }}
-            >
+            <span className="px-2 py-1 rounded-sm bg-date-highlight">
               March 14, 2026 &bull; QC Office &bull; Free Entry
             </span>
           </p>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.1] text-balance mb-8" style={{ backgroundColor: "#9F92FF" }}>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.1] text-balance mb-8 bg-hero-container">
             Build agents with <span className="text-white">Botpress ADK</span>
             <br />
           </h1>
-          <p className="text-md md:text-lg  max-w-2xl mx-auto mb-12 leading-relaxed" style={{ backgroundColor: "#9F92FF" }}>
+          <p className="text-md md:text-lg max-w-2xl mx-auto mb-12 leading-relaxed bg-hero-container">
             Join 100 developers for a 12-hour hackathon. Learn the ADK, build Discord agents
             with Botpress, and compete for prizes. Teams of up to 4.
           </p>
@@ -70,14 +59,14 @@ export function HeroSection() {
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
 
-            <Button size="lg" variant="outline" className="text-base px-8 bg-[#9F92FF] border-[1px] border-black hover:bg-[#8578e8] hover:text-black">
+            <Button size="lg" variant="outline" className="text-base px-8 bg-hero-container border border-black hover:bg-hero-container-dark hover:text-black">
               View Schedule
             </Button>
           </div>
         </div>
 
         {/* Event Details */}
-        <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 p-2 text-center" style={{ backgroundColor: "#9F92FF" }}>
+        <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 p-2 text-center bg-hero-container">
           <div>
             <p className="text-sm  mb-1 font-mono uppercase tracking-wide">Location</p>
             <p className="text-foreground font-medium text-white">QC Office</p>

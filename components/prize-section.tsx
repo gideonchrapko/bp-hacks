@@ -72,10 +72,7 @@ export function PrizeSection() {
           ))}
         </div>
 
-        <div
-          className="mt-12 rounded-xl flex min-h-[320px] overflow-hidden"
-          style={{ backgroundColor: "#EFEFEF" }}
-        >
+        <div className="mt-12 rounded-xl flex min-h-[320px] overflow-hidden bg-merch-bg">
           <div className="relative w-1/3 shrink-0 min-h-[320px]">
             <Image
               src="/images/merch.png"
