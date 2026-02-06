@@ -114,19 +114,19 @@ export function InfoSection() {
 
               <div className="space-y-4 mb-8">
                 <div className="flex justify-between py-3 border-b border-black">
-                  <span className="text-muted-foreground">Event Date</span>
+                  <span className="font-bold">Event Date</span>
                   <span className="font-medium">March 14th, 2026</span>
                 </div>
                 <div className="flex justify-between py-3 border-b border-black">
-                  <span className="text-muted-foreground">Time</span>
+                  <span className="font-bold">Time</span>
                   <span className="font-medium">9:00 AM – 9:00 PM</span>
                 </div>
                 <div className="flex justify-between py-3 border-b border-black">
-                  <span className="text-muted-foreground">Team Size</span>
+                  <span className="font-bold">Team Size</span>
                   <span className="font-medium">3–4 people (register individually)</span>
                 </div>
                 <div className="flex justify-between py-3 border-b border-black">
-                  <span className="text-muted-foreground">Registration Fee</span>
+                  <span className="font-bold">Registration Fee</span>
                   <span className="font-medium">Free</span>
                 </div>
               </div>

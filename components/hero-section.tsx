@@ -10,7 +10,7 @@ export function HeroSection() {
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-background">
       {/* Purple image container - same max-width as content (max-w-7xl) */}
-      <div className="absolute z-0 top-[80px] left-0 right-0 bottom-[30px] px-[30px]">
+      <div className="absolute z-0 top-[80px] left-0 right-0 bottom-[30px] px-4 md:px-[30px]">
         <div className="max-w-7xl mx-auto h-full rounded-[15px] overflow-hidden shadow-none bg-hero-container bg-hero-pattern bg-repeat bg-auto" />
       </div>
 
@@ -18,27 +18,36 @@ export function HeroSection() {
       <nav className="absolute top-0 left-0 right-0 z-50 px-6 py-6 md:px-12">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-8">
-            <Image
-              src="/images/bp-hacks.svg"
-              alt="BP Hacks"
-              width={140}
-              height={40}
-              className="h-5 w-auto"
-            />
+            <Link href="/" className="block">
+              <Image
+                src="/images/bp-hacks.svg"
+                alt="BP Hacks"
+                width={140}
+                height={40}
+                className="h-5 w-auto"
+              />
+            </Link>
             <div className="hidden md:flex items-center gap-6 text-sm ">
-              <a href="#prizes" className="hover:text-foreground transition-colors">Prizes</a>
-              <a href="#info" className="hover:text-foreground transition-colors">Info</a>
-              <a href="#agenda" className="hover:text-foreground transition-colors">Schedule</a>
-              <a href="#judging" className="hover:text-foreground transition-colors">Judging</a>
-              <a href="#faq" className="hover:text-foreground transition-colors">FAQ</a>
+              <a href="#prizes" className="hover:text-foreground hover:opacity-60 transition-colors transition-opacity">Prizes</a>
+              <a href="#info" className="hover:text-foreground hover:opacity-60 transition-colors transition-opacity">Info</a>
+              <a href="#agenda" className="hover:text-foreground hover:opacity-60 transition-colors transition-opacity">Schedule</a>
+              <a href="#judging" className="hover:text-foreground hover:opacity-60 transition-colors transition-opacity">Judging</a>
+              <a href="#faq" className="hover:text-foreground hover:opacity-60 transition-colors transition-opacity">FAQ</a>
             </div>
           </div>
-          <Button asChild size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
-            <Link href={EVENTBRITE_URL} target="_blank" rel="noopener noreferrer">
-              Register Now
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button asChild size="sm" variant="secondary" className="bg-white text-black border-border hover:bg-gray-100 hover:text-black">
+              <Link href="https://botpress.com" target="_blank" rel="noopener noreferrer">
+                Learn about Botpress
+              </Link>
+            </Button>
+            <Button asChild size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
+              <Link href={EVENTBRITE_URL} target="_blank" rel="noopener noreferrer">
+                Register Now
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </nav>
 
@@ -63,7 +72,7 @@ export function HeroSection() {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="text-base px-8 bg-hero-container border border-black hover:bg-hero-container-dark hover:text-black">
+            <Button asChild size="lg" variant="outline" className="text-base px-8 bg-hero-container border border-black/60 hover:bg-hero-container-dark hover:text-black hover:border-black/60">
               <Link href="#agenda">View Schedule</Link>
             </Button>
           </div>

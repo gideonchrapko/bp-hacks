@@ -36,7 +36,7 @@ export function PrizeSection() {
           {prizes.map((prize) => (
             <div
               key={prize.title}
-              className={`overflow-hidden flex flex-col ${
+              className={`overflow-hidden flex flex-col transition-all duration-200 hover:shadow-lg hover:-translate-y-1 hover:border-accent/30 ${
                 prize.backgroundImage
                   ? "rounded-lg border border-border"
                   : "rounded-xl " + (prize.accent ? "bg-accent/5" : "bg-background")
@@ -72,17 +72,17 @@ export function PrizeSection() {
           ))}
         </div>
 
-        <div className="mt-12 rounded-xl flex min-h-[320px] overflow-hidden bg-merch-bg">
-          <div className="relative w-1/3 shrink-0 min-h-[320px]">
+        <div className="mt-12 rounded-xl flex flex-col md:flex-row min-h-[320px] overflow-hidden bg-merch-bg">
+          <div className="relative w-full aspect-[4/3] md:w-1/3 md:aspect-auto md:min-h-[320px] shrink-0">
             <Image
               src="/images/merch.png"
               alt=""
               fill
               className="object-cover object-center"
-              sizes="33vw"
+              sizes="(max-width: 768px) 100vw, 33vw"
             />
           </div>
-          <div className="flex-1 flex flex-col justify-center p-10">
+          <div className="flex-1 flex flex-col justify-center px-6 py-6 md:p-10">
             <p className="text-2xl text-foreground mb-2">Merch for everyone</p>
             <p className="body-copy">
               All participants will receive exclusive hackathon swag.
