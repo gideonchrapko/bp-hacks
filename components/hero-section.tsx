@@ -1,12 +1,15 @@
 "use client"
 
+import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Menu, X } from "lucide-react"
 import { EVENTBRITE_URL } from "@/lib/constants"
 
 export function HeroSection() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-background">
       {/* Purple image container - same max-width as content (max-w-7xl) */}
@@ -36,19 +39,65 @@ export function HeroSection() {
             </div>
           </div>
           <div className="flex items-center gap-2">
-            <Button asChild size="sm" variant="secondary" className="bg-white text-black border-border hover:bg-gray-100 hover:text-black">
-              <Link href="https://botpress.com" target="_blank" rel="noopener noreferrer">
-                Learn about Botpress
-              </Link>
-            </Button>
-            <Button asChild size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
-              <Link href={EVENTBRITE_URL} target="_blank" rel="noopener noreferrer">
-                Register Now
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
+            <button
+              type="button"
+              className="md:hidden p-2 rounded-md text-foreground hover:bg-white/10 transition-colors"
+              onClick={() => setMobileMenuOpen(true)}
+              aria-label="Open menu"
+            >
+              <Menu className="h-6 w-6" />
+            </button>
+            <div className="hidden md:flex items-center gap-2">
+              <Button asChild size="sm" variant="secondary" className="bg-white text-black border-border hover:bg-gray-100 hover:text-black">
+                <Link href="https://botpress.com" target="_blank" rel="noopener noreferrer">
+                  Learn about Botpress
+                </Link>
+              </Button>
+              <Button asChild size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
+                <Link href={EVENTBRITE_URL} target="_blank" rel="noopener noreferrer">
+                  Register Now
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
+
+        {/* Mobile menu - full screen */}
+        {mobileMenuOpen && (
+          <div className="md:hidden fixed inset-0 z-50 bg-hero-container flex flex-col animate-in fade-in-0 zoom-in-95 duration-200">
+            <div className="flex justify-end p-6">
+              <button
+                type="button"
+                className="p-2 rounded-md text-white hover:bg-white/20 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+                aria-label="Close menu"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+            <div className="px-6 pt-4 pb-6 flex flex-col gap-6">
+              <a href="#prizes" className="text-white text-lg py-2 hover:opacity-80 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Prizes</a>
+              <a href="#info" className="text-white text-lg py-2 hover:opacity-80 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Info</a>
+              <a href="#agenda" className="text-white text-lg py-2 hover:opacity-80 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Schedule</a>
+              <a href="#judging" className="text-white text-lg py-2 hover:opacity-80 transition-opacity" onClick={() => setMobileMenuOpen(false)}>Judging</a>
+              <a href="#faq" className="text-white text-lg py-2 hover:opacity-80 transition-opacity" onClick={() => setMobileMenuOpen(false)}>FAQ</a>
+              <div className="flex flex-col gap-3 pt-6 border-t border-white/20">
+                <Button asChild size="default" variant="secondary" className="bg-white text-black border-border hover:bg-gray-100 hover:text-black w-full text-base">
+                  <Link href="https://botpress.com" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>
+                    Learn about Botpress
+                  </Link>
+                </Button>
+                <Button asChild size="default" className="bg-primary text-primary-foreground hover:bg-primary/90 w-full text-base">
+                  <Link href={EVENTBRITE_URL} target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)}>
+                    Register Now
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Hero Content */}
