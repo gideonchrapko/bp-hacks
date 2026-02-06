@@ -53,17 +53,16 @@ export function HeroSection() {
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] text-balance mb-8 bg-hero-container">
             Build, ship, and demo a Discord agent in one day with <span className="text-white">Botpress.</span>
           </h1>
-          <p className="body-copy max-w-2xl mx-auto mb-12 bg-hero-container">
-            Join us for a one-day, in-person hackathon in Québec City. Design and build creative agents with Botpress — all in a single day.
+          <p className="body-copy max-w-2xl mx-auto mb-12 bg-hero-container px-2">
+          Join us for a one-day, in-person hackathon where participants will design and build creative, useful agents using Botpress. Whether you’re a student or a recent graduate, this event is a chance to experiment, collaborate, and ship something real — all in a single day.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center" >
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-base px-8">
               <Link href={EVENTBRITE_URL} target="_blank" rel="noopener noreferrer">
                 Register on Eventbrite
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-
             <Button asChild size="lg" variant="outline" className="text-base px-8 bg-hero-container border border-black hover:bg-hero-container-dark hover:text-black">
               <Link href="#agenda">View Schedule</Link>
             </Button>
